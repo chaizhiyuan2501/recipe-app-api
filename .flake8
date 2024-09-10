@@ -1,0 +1,10 @@
+﻿[flake8]
+select = E501
+max-line-length = 150
+exclude =
+    migrations
+    __pycache__
+    manage.py
+    settings.py
+    env
+    .env

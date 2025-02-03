@@ -7,18 +7,31 @@
 📚 [Build a Backend REST API with Python & Django - Advanced]([https://www.udemy.com/share/103OHY3@5JdSpwpJtBk6FXDdLoQeB-D1g_nt31JH7eSso0Ld1otnAfjP6jSbJjPZHRQXrwCRsA==/](https://www.udemy.com/share/101XNg3@WE8IZnWYBVLl2mDhrK-zPKrdkHjTDGFaNre9NCgZuFYyLBRhMbuGFV5Ag4NEk90yJw==/))
 
 **学習ポイント**
-- **templateでのFormの表示の実装**
-- **Formのバリデーションの理解**
-- **Formの各要素を表示する**
-- **Modelを用いてた画像ファイルのアップロード機能の実装**
+- **Dorkerを開発環境を構築する**
+- **PostgreSQL の設定・運用**
+- **Djangoのテストツールの利用**
+- **GitHub Actions でコードの自動テスト、リントチェック**
+- **Swagger UI(APIのドキュメントを表示するツール)の利用**
+- **Token認証を実装する**
+- **画像のアップロード機能**
+- **Django Admin のカスタマイズ**
+
 
 ---
+
+## 主な機能
+- ユーザー認証（ログイン / 登録 / ログアウト）
+- REST API（Django REST Framework を使用）
+- レシピ管理(作成､更新､削除)
+- タグ機能
+- 
 
 ## 🛠️ 使用技術
 - **フレームワーク**: Django / djangorestframework
 - **データベース**: postgres 13
 - **開発環境**: Python 3.x, Django Shell
-- **仮想環境**: docker
+- **コンテナ環境**: Docker, Docker-Compose
+- 
 
 ---
 
@@ -30,21 +43,12 @@ git clone https://github.com/chaizhiyuan2501/recipe-app-api.git
 cd recipe-app-api
 ```
 
-### 2️⃣ **仮想環境の作成と有効化**
+### 2️⃣ **Docker**
 **Windows (PowerShell) の場合**
-```powershell
-python -m venv venv
-.\venv\Scripts\Activate
-```
-**Windows (\u30b3マンドプロンプト) の場合**
-```cmd
-venv\Scripts\activate.bat
-```
-**Mac / Linux の場合**
 ```bash
-python3 -m venv venv
-source venv/bin/activate
+docker-compose build
 ```
+
 
 ### 3️⃣ **必要なパッケージをインストール**
 ```bash
@@ -59,7 +63,7 @@ python manage.py migrate
 
 ### 4️⃣ **サーバーの起動**
 ```bash
-python manage.py runserver
+docker-compose run --rm app sh -c "python manage.py runserver
 ```
 
 ---
